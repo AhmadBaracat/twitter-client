@@ -20,6 +20,16 @@ class LoginViewController: UIViewController {
             if let unwrappedSession = session {
             
                 print("signed in as \(unwrappedSession.userName)");
+                
+                //Instantiate MainViewController
+                let mainViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId") as! MainViewController
+                
+                //PresentViewController on the main thread
+                //Without this we get the “attempt to present ViewController whose view is not in the window hierarchy”
+                //Because at this point in execution the view would not be have displayed yet
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.presentViewController(mainViewController, animated: true, completion: nil)
+                })
 
             } else {
                 print("Login error: %@", error!.localizedDescription);
