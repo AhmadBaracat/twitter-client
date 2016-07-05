@@ -32,8 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             print("User is already logged in. Navigating to MainViewController...")
             
-            //Navigate to mainViewController
-            self.window?.rootViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId")
+            let mainViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId")
+            
+            // Creating a navigation controller with viewController at the root of the navigation stack.
+            let navController = UINavigationController(rootViewController: mainViewController!)
+            self.window?.rootViewController = navController
 
         }
         else
