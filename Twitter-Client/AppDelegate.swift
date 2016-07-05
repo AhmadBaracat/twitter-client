@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +17,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //Initialize Fabric with Twitter Kit
+        Fabric.with([Twitter.self])
+        
+        //Get the store of user sessions
+        let store = Twitter.sharedInstance().sessionStore
+        
+        //Get the last user session
+        let lastSession = store.session
+        
+        //Check if user was already logged in
+        if((lastSession()) != nil)
+        {
+            print("User is already logged in. Navigating to MainViewController")
+            
+            //Navigate to mainViewController
+            self.window?.rootViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId")
+
+        }
+        else
+        {
+            print("First time user")
+        }
+        
+        
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

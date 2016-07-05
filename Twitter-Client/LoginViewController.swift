@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import TwitterKit
 
 class LoginViewController: UIViewController {
 
+    // TODO: Change the layout of this screen
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        //Add login button
+        let logInButton = TWTRLogInButton { (session, error) in
+            if let unwrappedSession = session {
+            
+                print("signed in as \(unwrappedSession.userName)");
+
+            } else {
+                print("Login error: %@", error!.localizedDescription);
+            }
+        }
+        
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
     }
 
     override func didReceiveMemoryWarning() {
