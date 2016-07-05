@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Check if user was already logged in
         if((lastSession()) != nil)
         {
-            print("User is already logged in. Navigating to MainViewController")
+            print("User is already logged in. Navigating to MainViewController...")
             
             //Navigate to mainViewController
             self.window?.rootViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId")
