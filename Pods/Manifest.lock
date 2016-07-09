@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (3.4.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - Argo (2.0.0)
+  - Curry (2.3.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.X)
+  - AlamofireImage (~> 2.0)
+  - Argo (= 2.0)
+  - Curry
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  Argo: 43133aa1612b249bbadd24aca94605aa0f13690d
+  Curry: c8f65c8ade091aad5cb86f7b51dd408d698810ca
+
+PODFILE CHECKSUM: 28163e0f9484df469f6bd03dfdae5ad2f41b16d4
+
+COCOAPODS: 1.0.1
