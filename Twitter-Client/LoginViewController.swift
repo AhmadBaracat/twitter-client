@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
             if let unwrappedSession = session {
             
                 print("signed in as \(unwrappedSession.userName)");
-                
+
                 //Instantiate MainViewController
                 let mainViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewControllerId") as! MainViewController
                 
