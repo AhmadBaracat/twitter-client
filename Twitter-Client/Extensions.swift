@@ -41,7 +41,7 @@ extension UIImage
             print(fetchError)
         }
         
-        return UIImage()
+        return UIImage(named: "Placeholder")!
     }
     
     static func saveImageToDisk(imageData: NSData, url: String)
