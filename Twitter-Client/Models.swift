@@ -27,13 +27,19 @@ struct User: Decodable {
     var screen_name: String
     var description: String
     var profile_image_url: String
+    var profile_banner_url: String?
+    var profile_background_color: String?
   
     
     static func decode(j: JSON) -> Decoded<User> {
-        return curry(User.init)
+        let s = curry(User.init)
             <^> j <| "name"
             <*> j <| "screen_name"
             <*> j <| "description"
             <*> j <| "profile_image_url"
+         return s
+            <*> j <|? "profile_banner_url"
+            <*> j <|? "profile_background_color"
+        
     }
 }
