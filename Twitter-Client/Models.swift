@@ -30,7 +30,6 @@ struct User: Decodable {
     var profile_banner_url: String?
     var profile_background_color: String?
   
-    
     static func decode(j: JSON) -> Decoded<User> {
         let s = curry(User.init)
             <^> j <| "name"
@@ -41,5 +40,34 @@ struct User: Decodable {
             <*> j <|? "profile_banner_url"
             <*> j <|? "profile_background_color"
         
+    }
+}
+
+struct Tweet: Decodable {
+    let text: String
+    let entities: Entity?
+    
+    static func decode(j: JSON) -> Decoded<Tweet> {
+        return curry(Tweet.init)
+            <^> j <| "text"
+            <*> j <|? "entities"
+    }
+}
+
+struct Entity: Decodable {
+    let media: [MediaEntity]?
+    
+    static func decode(j: JSON) -> Decoded<Entity> {
+        return curry(Entity.init)
+            <^> j <||? "media"
+    }
+}
+
+struct MediaEntity: Decodable {
+    let media_url: String?
+    
+    static func decode(j: JSON) -> Decoded<MediaEntity> {
+        return curry(MediaEntity.init)
+            <^> j <|? "media_url"
     }
 }
