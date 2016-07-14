@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A114489D1D3585860019EDD2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114489C1D3585860019EDD2 /* Extensions.swift */; };
+		A114489F1D359DB00019EDD2 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114489E1D359DB00019EDD2 /* FollowerViewController.swift */; };
 		A193350E1D3123A9004A2A4E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */; };
 		A194F21B1D30FEB20094CEEC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194F21A1D30FEB20094CEEC /* Models.swift */; };
 		A19A6C0F1D2BDB2900165020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A6C0E1D2BDB2900165020 /* AppDelegate.swift */; };
@@ -14,6 +16,8 @@
 		A19A6C141D2BDB2900165020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19A6C121D2BDB2900165020 /* Main.storyboard */; };
 		A19A6C161D2BDB2900165020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19A6C151D2BDB2900165020 /* Assets.xcassets */; };
 		A19A6C191D2BDB2900165020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19A6C171D2BDB2900165020 /* LaunchScreen.storyboard */; };
+		A1ACF6641D318C610048ECCF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1ACF6621D318C610048ECCF /* Model.xcdatamodeld */; };
+		A1ACF6871D31A6A30048ECCF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ACF6861D31A6A30048ECCF /* Reachability.swift */; };
 		A1EEA58A1D2BDF9B00B1764D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1EEA5861D2BDF9B00B1764D /* Fabric.framework */; };
 		A1EEA58B1D2BDF9C00B1764D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1EEA5871D2BDF9B00B1764D /* TwitterKit.framework */; };
 		A1EEA58C1D2BDF9C00B1764D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1EEA5881D2BDF9B00B1764D /* TwitterKitResources.bundle */; };
@@ -24,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		760EA33369DEA67A2A4FE198 /* Pods_Twitter_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A114489C1D3585860019EDD2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A114489E1D359DB00019EDD2 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
 		A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		A194F21A1D30FEB20094CEEC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A19A6C0B1D2BDB2900165020 /* Twitter-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +39,8 @@
 		A19A6C151D2BDB2900165020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19A6C181D2BDB2900165020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A19A6C1A1D2BDB2900165020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1ACF6631D318C610048ECCF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A1ACF6861D31A6A30048ECCF /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A1EEA5861D2BDF9B00B1764D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A1EEA5871D2BDF9B00B1764D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		A1EEA5881D2BDF9B00B1764D /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 				A19A6C101D2BDB2900165020 /* LoginViewController.swift */,
 				A19A6C121D2BDB2900165020 /* Main.storyboard */,
 				A1EEA58E1D2BE5B600B1764D /* MainViewController.swift */,
+				A114489C1D3585860019EDD2 /* Extensions.swift */,
+				A114489E1D359DB00019EDD2 /* FollowerViewController.swift */,
+				A1ACF6861D31A6A30048ECCF /* Reachability.swift */,
+				A1ACF6621D318C610048ECCF /* Model.xcdatamodeld */,
 				A19A6C151D2BDB2900165020 /* Assets.xcassets */,
 				A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */,
 				A19A6C171D2BDB2900165020 /* LaunchScreen.storyboard */,
@@ -249,11 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1ACF6871D31A6A30048ECCF /* Reachability.swift in Sources */,
+				A114489F1D359DB00019EDD2 /* FollowerViewController.swift in Sources */,
 				A1EEA58F1D2BE5B600B1764D /* MainViewController.swift in Sources */,
 				A19A6C111D2BDB2900165020 /* LoginViewController.swift in Sources */,
+				A114489D1D3585860019EDD2 /* Extensions.swift in Sources */,
 				A19A6C0F1D2BDB2900165020 /* AppDelegate.swift in Sources */,
 				A194F21B1D30FEB20094CEEC /* Models.swift in Sources */,
 				A193350E1D3123A9004A2A4E /* FollowerTableViewCell.swift in Sources */,
+				A1ACF6641D318C610048ECCF /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +434,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1ACF6621D318C610048ECCF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1ACF6631D318C610048ECCF /* Model.xcdatamodel */,
+			);
+			currentVersion = A1ACF6631D318C610048ECCF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A19A6C031D2BDB2900165020 /* Project object */;
 }
