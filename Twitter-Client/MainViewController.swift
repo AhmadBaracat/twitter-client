@@ -34,7 +34,7 @@ class MainViewController: UITableViewController {
                     
                     //Map the foundation object to Response object
                     let response: Response? = decode(j)
-                                        
+                    
                     //Add the users to the followers
                     for user in (response?.users)!
                     {
@@ -131,10 +131,9 @@ class MainViewController: UITableViewController {
         let lastSession = store.session
         
         //Check if user was already logged in
-        if((lastSession()) != nil)
+        if let session = lastSession()
         {
-            getFollowers(lastSession()!, cursor: "-1")
-            
+            getFollowers(session, cursor: "-1")
             
             //For testing purposes, not to hit the API limit
             // var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
@@ -148,17 +147,17 @@ class MainViewController: UITableViewController {
     //Test method to fill the followers
     func update() {
         /*
-        var user = User(name: "Ahmed Baracat", screen_name: "baracat_wp7", description: "I am a software developer with great passion for design. I have created a number of games and apps for Windows Phone, Android, iOS, watchOS, tvOS :):). I am coo0000000000000llllll", profile_image_url: "https://pbs.twimg.com/profile_images/619282614399180800/IRLGlac6_bigger.jpg")
-        
-        followers.append(user)
-        
-        user = User(name: "Fardia", screen_name: "fifo", description: "", profile_image_url: "https://pbs.twimg.com/profile_images/619282614399180800/IRLGlac6_bigger.jpg")
-        
-        followers.append(user)
-        
-        //Make sure we display the newly added followers
-        tableView.reloadData()
- */
+         var user = User(name: "Ahmed Baracat", screen_name: "baracat_wp7", description: "I am a software developer with great passion for design. I have created a number of games and apps for Windows Phone, Android, iOS, watchOS, tvOS :):). I am coo0000000000000llllll", profile_image_url: "https://pbs.twimg.com/profile_images/619282614399180800/IRLGlac6_bigger.jpg")
+         
+         followers.append(user)
+         
+         user = User(name: "Fardia", screen_name: "fifo", description: "", profile_image_url: "https://pbs.twimg.com/profile_images/619282614399180800/IRLGlac6_bigger.jpg")
+         
+         followers.append(user)
+         
+         //Make sure we display the newly added followers
+         tableView.reloadData()
+         */
     }
     
     override func didReceiveMemoryWarning() {
@@ -176,38 +175,62 @@ class MainViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let currentFollower = followers[indexPath.row]
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)  as! FollowerTableViewCell
         
+        //Add placeholder image
+        cell.profileImageView.image = UIImage(named: "Placeholder")
+        
         //Populate the cell
-        cell.nameLabel?.text = followers[indexPath.row].name
-        cell.screenNameLabel?.text = followers[indexPath.row].screen_name
-        cell.descriptionTextView?.text = followers[indexPath.row].description
+        cell.nameLabel?.text = currentFollower.name
+        cell.screenNameLabel?.text = currentFollower.screen_name
+        cell.descriptionTextView?.text = currentFollower.description
         
-        let profileImageURL = followers[indexPath.row].profile_image_url
+        let profileImageURL = currentFollower.profile_image_url
         
+        //Check if there is an Internet connection
         if(Reachability.isConnectedToNetwork())
         {
-            //Fetch profile image
-            Alamofire.request(.GET, profileImageURL)
-                .responseImage { response in
-                    
-                    if let image = response.result.value {
-                        
-                        cell.profileImageView.image = image
-                        UIImage.saveImageToDisk(NSData(data: UIImageJPEGRepresentation(image, 1.0)!), url: profileImageURL)
-                    }
-            }
-            
-            //Fetch background image
-            if let backgroundImageURL = followers[indexPath.row].profile_banner_url
+            //Check for the image in the cache
+            if let image = imageCache.imageWithIdentifier(profileImageURL)
             {
-                Alamofire.request(.GET, backgroundImageURL)
+                    cell.profileImageView.image = image
+            }
+            else
+            {
+                //Fetch profile image
+                Alamofire.request(.GET, profileImageURL)
                     .responseImage { response in
                         
                         if let image = response.result.value {
                             
-                            UIImage.saveImageToDisk(NSData(data: UIImageJPEGRepresentation(image, 1.0)!), url: backgroundImageURL)
+                            //Save the image to disk
+                            UIImage.saveImageToDisk(NSData(data: UIImageJPEGRepresentation(image, 1.0)!), url: profileImageURL)
+                            
+                            //Cache the image
+                            self.imageCache.addImage(image, withIdentifier: profileImageURL)
+                            
+                            //Apply the image to the correct cell
+                            if let updateCell = tableView.cellForRowAtIndexPath(indexPath) as? FollowerTableViewCell
+                            {
+                                updateCell.profileImageView.image = image
+                            }
+                            
                         }
+                }
+                
+                //Fetch background image
+                if let backgroundImageURL = followers[indexPath.row].profile_banner_url
+                {
+                    Alamofire.request(.GET, backgroundImageURL)
+                        .responseImage { response in
+                            
+                            if let image = response.result.value {
+                                
+                                UIImage.saveImageToDisk(NSData(data: UIImageJPEGRepresentation(image, 1.0)!), url: backgroundImageURL)
+                            }
+                    }
                 }
             }
         }
