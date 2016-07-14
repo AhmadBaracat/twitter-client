@@ -66,7 +66,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-Of-Bse">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-Of-Bse">
                                             <rect key="frame" x="166" y="64" width="426" height="85.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -125,10 +125,66 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Followers" id="BBF-sm-PNR"/>
+                    <connections>
+                        <segue destination="raX-aM-e9E" kind="show" identifier="Follower" id="CY5-k5-RZp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yza-1f-K22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2112" y="235"/>
+        </scene>
+        <!--Follower View Controller-->
+        <scene sceneID="49l-ef-9kj">
+            <objects>
+                <viewController id="raX-aM-e9E" customClass="FollowerViewController" customModule="Twitter_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GiM-9O-Nfv"/>
+                        <viewControllerLayoutGuide type="bottom" id="fKJ-6g-Zkf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="slo-x8-1DV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-66-CVm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.93333333333333335" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9J5-66-CVm" secondAttribute="height" multiplier="1500:500" id="81v-5H-n5m"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-rh-MEw">
+                                <rect key="frame" x="240" y="197" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="P5P-rh-MEw" secondAttribute="height" multiplier="1:1" id="XrU-5G-AFK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9J5-66-CVm" firstAttribute="width" secondItem="slo-x8-1DV" secondAttribute="width" id="1aa-Xg-HnI"/>
+                            <constraint firstItem="P5P-rh-MEw" firstAttribute="baseline" secondItem="9J5-66-CVm" secondAttribute="baseline" multiplier="1.2" id="DeD-dn-oeD"/>
+                            <constraint firstItem="9J5-66-CVm" firstAttribute="top" secondItem="GiM-9O-Nfv" secondAttribute="bottom" id="LLC-cj-Toh"/>
+                            <constraint firstItem="P5P-rh-MEw" firstAttribute="width" secondItem="slo-x8-1DV" secondAttribute="width" multiplier="0.2" id="Sle-T9-f4S"/>
+                            <constraint firstItem="P5P-rh-MEw" firstAttribute="centerY" secondItem="9J5-66-CVm" secondAttribute="centerY" multiplier="0.5" id="Xgn-Pn-jGq"/>
+                            <constraint firstItem="P5P-rh-MEw" firstAttribute="centerX" secondItem="9J5-66-CVm" secondAttribute="centerX" id="a71-3d-eRS"/>
+                            <constraint firstItem="9J5-66-CVm" firstAttribute="centerX" secondItem="slo-x8-1DV" secondAttribute="centerX" id="a92-IT-3gp"/>
+                            <constraint firstItem="P5P-rh-MEw" firstAttribute="centerX" secondItem="slo-x8-1DV" secondAttribute="centerX" id="b5a-x6-xMt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xgn-Pn-jGq"/>
+                                <exclude reference="a71-3d-eRS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="9J5-66-CVm" id="42L-Ra-Dnu"/>
+                        <outlet property="profileImageView" destination="P5P-rh-MEw" id="hZn-c0-lQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kyu-kr-6PX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zcv-po-AYM">
