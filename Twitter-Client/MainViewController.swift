@@ -36,8 +36,12 @@ class MainViewController: UITableViewController {
                     let response: Response? = decode(j)
                     
                     //Add the users to the followers
-                    for user in (response?.users)!
+                    for var user in (response?.users)!
                     {
+                        
+                        user.profile_image_url = (user.profile_image_url as NSString).stringByReplacingOccurrencesOfString("_normal", withString: "")
+
+                        
                         self.followers.append(user)
                     }
                     
@@ -187,7 +191,7 @@ class MainViewController: UITableViewController {
         cell.screenNameLabel?.text = currentFollower.screen_name
         cell.descriptionTextView?.text = currentFollower.description
         
-        let profileImageURL = currentFollower.profile_image_url
+        var profileImageURL = currentFollower.profile_image_url
         
         //Check if there is an Internet connection
         if(Reachability.isConnectedToNetwork())
