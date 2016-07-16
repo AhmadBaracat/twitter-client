@@ -15,12 +15,16 @@ import ImageViewer
 
 class FollowerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Instatiate the image cache
     let imageCache = AutoPurgingImageCache()
     
+    //The follower object for the ViewController
     var follower: User?
     
+    //Tweets array to hold user tweets
     var tweets = [Tweet]()
     
+    //To access the tapped image action for the overlay feature
     let helper = Helper()
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -37,9 +41,11 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
         //Set the title of the navigation bar
         title = follower?.name
         
+        //Load the profile image from the db
         profileImageView.image = UIImage.loadImageFromDisk(follower!.profile_image_url)
-        profileImageView.layer.borderWidth = 3
         
+        //Create a border width to distinguish the image from the banner
+        profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
         //Set the banner image
@@ -52,11 +58,11 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
             backgroundImageView.image = UIImage.loadImageFromDisk("")
         }
         
-        //Profile image overlay
+        //Profile image overlay action
         var tapGestureRecognizer = UITapGestureRecognizer(target:helper, action:Selector("imageTapped:"))
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
-
-        //Banner image overlay
+        
+        //Banner image overlay action
         tapGestureRecognizer = UITapGestureRecognizer(target:helper, action:Selector("imageTapped:"))
         backgroundImageView.addGestureRecognizer(tapGestureRecognizer)
         
@@ -64,21 +70,12 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
         tweetsTableView.estimatedRowHeight = 140
         
-        //For testing purposes
-        //populateModel()
-        
         getTweets()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func populateModel()
-    {
-        // tweets += ["hi", "lol", "I am a software developer with great passion for design. I have created a number of games and apps for Windows Phone, Android, iOS, watchOS, tvOS :):). I am coo0000000000000llllll"]
     }
     
     func getTweets()
