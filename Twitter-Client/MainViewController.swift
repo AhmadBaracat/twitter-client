@@ -188,7 +188,7 @@ class MainViewController: UITableViewController {
         
         //Populate the cell
         cell.nameLabel?.text = currentFollower.name
-        cell.screenNameLabel?.text = currentFollower.screen_name
+        cell.screenNameLabel?.text = "@" + currentFollower.screen_name
         cell.descriptionTextView?.text = currentFollower.description
         
         var profileImageURL = currentFollower.profile_image_url
