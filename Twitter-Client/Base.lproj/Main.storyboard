@@ -25,6 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1068" y="-483"/>
         </scene>
         <!--Followers-->
         <scene sceneID="flx-55-cyH">
@@ -146,14 +147,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-66-CVm">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-66-CVm">
                                 <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <color key="backgroundColor" red="0.9137254901960784" green="0.93333333333333335" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9J5-66-CVm" secondAttribute="height" multiplier="1500:500" id="81v-5H-n5m"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-rh-MEw">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-rh-MEw">
                                 <rect key="frame" x="20" y="144" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P5P-rh-MEw" secondAttribute="height" multiplier="1:1" id="XrU-5G-AFK"/>
@@ -164,7 +165,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tweetCell" rowHeight="200" id="d75-xS-sWV" customClass="TweetTableViewCell" customModule="Twitter_Client" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tweetCell" rowHeight="200" id="d75-xS-sWV" customClass="TweetTableViewCell" customModule="Twitter_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d75-xS-sWV" id="H3w-av-pe7">
@@ -190,7 +191,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pJf-R6-D9L">
-                                                    <rect key="frame" x="136" y="65" width="456" height="118"/>
+                                                    <rect key="frame" x="136" y="65.5" width="456" height="117.5"/>
                                                     <color key="backgroundColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="pJf-R6-D9L" secondAttribute="height" multiplier="150:100" id="Q2h-B2-1US"/>
@@ -217,6 +218,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="fAC-Et-GhM" id="KOk-0S-vfE"/>
                                             <outlet property="profileImageView" destination="kOn-tP-dpL" id="Vok-7z-o1t"/>
+                                            <outlet property="tweetImageBottomConstraint" destination="U4U-dB-IxW" id="aQ6-Hh-prp"/>
                                             <outlet property="tweetImageTrailingConstraint" destination="XuL-i8-Hw1" id="UxK-Aj-H03"/>
                                             <outlet property="tweetImageView" destination="pJf-R6-D9L" id="Cle-bO-mEx"/>
                                             <outlet property="tweetLabel" destination="uQz-Wh-DPl" id="a1A-7W-0Dt"/>
