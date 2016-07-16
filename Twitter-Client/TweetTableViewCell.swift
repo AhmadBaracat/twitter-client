@@ -18,7 +18,6 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet var tweetImageTrailingConstraint: NSLayoutConstraint!
     @IBOutlet var tweetImageBottomConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
-       
         
         super.awakeFromNib()
         // Initialization code
