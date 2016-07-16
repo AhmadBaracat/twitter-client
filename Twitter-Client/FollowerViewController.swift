@@ -113,7 +113,7 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
             var clientError : NSError?
             
             //Add the cursor which indicates which page to fetch
-            let params = ["count": "20", "include_rts": "1", "screen_name": follower!.screen_name]
+            let params = ["count": "10", "include_rts": "1", "screen_name": follower!.screen_name]
             
             //Create the Twitter request to get the required http headers
             let twitterRequest = client.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
