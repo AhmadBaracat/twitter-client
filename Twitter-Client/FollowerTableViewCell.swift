@@ -18,6 +18,9 @@ class FollowerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //Remove unneeded padding
+        descriptionTextView.textContainer.lineFragmentPadding = 0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
