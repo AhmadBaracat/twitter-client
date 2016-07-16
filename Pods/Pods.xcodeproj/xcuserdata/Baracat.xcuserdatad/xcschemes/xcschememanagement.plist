@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImageViewer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Twitter-Client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>357E4D698FA88A954EAF90F96AF47D81</key>
+		<key>6814D3B36EAB7B9C402A196A758A7E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>9A28D7DA654B0D822D70CD09E4D4BC33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0829B0E137FACC35E0B6AF0195DE146</key>
 		<dict>
 			<key>primary</key>
 			<true/>
