@@ -58,28 +58,6 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
         tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
         backgroundImageView.addGestureRecognizer(tapGestureRecognizer)
         
-
-        
-        /*
-         self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-         // Cover Vertical is necessary for CurrentContext
-         self.modalPresentationStyle = .CurrentContext
-         // Display on top of    current UIView
-         self.presentViewController(ModalImageViewController(), animated: true, completion: nil)
-         */
-        
-        //Create a border color for the banner
-        //backgroundImageView.layer.borderWidth = 3
-        //backgroundImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        
-        
-        /*
-         if let backgroundColor = follower?.profile_background_color
-         {
-         navigationController?.navigationBar.barTintColor = UIColor(hexString: backgroundColor)
-         }
-         */
-        
         //To auto size the cell height
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
         tweetsTableView.estimatedRowHeight = 140
@@ -98,8 +76,6 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
     
     func imageTapped(gestureRecognizer: AnyObject)
     {
-        print(gestureRecognizer)
-        
         if let gesture = gestureRecognizer as? UITapGestureRecognizer
         {
             if let imageView = gesture.view as? UIImageView
