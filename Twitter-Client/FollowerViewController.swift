@@ -233,6 +233,8 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
             cell.tweetImageTrailingConstraint.active = true
             cell.tweetImageView.alpha = 1
             
+            cell.tweetImageBottomConstraint.constant = 8
+            
         }
         else
         {
@@ -241,6 +243,9 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
             cell.tweetImageView.image = UIImage()
             cell.tweetImageTrailingConstraint.active = false
             cell.tweetImageView.alpha = 0
+            
+            //Make sure that space between cell and seperator is constant when we remove the image
+            cell.tweetImageBottomConstraint.constant = 0
         }
         
         return cell
