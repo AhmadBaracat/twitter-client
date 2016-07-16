@@ -21,6 +21,8 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
     
     var tweets = [Tweet]()
     
+    let helper = Helper()
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var tweetsTableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -51,11 +53,11 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         //Profile image overlay
-        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        var tapGestureRecognizer = UITapGestureRecognizer(target:helper, action:Selector("imageTapped:"))
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
 
         //Banner image overlay
-        tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        tapGestureRecognizer = UITapGestureRecognizer(target:helper, action:Selector("imageTapped:"))
         backgroundImageView.addGestureRecognizer(tapGestureRecognizer)
         
         //To auto size the cell height
@@ -72,22 +74,6 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func imageTapped(gestureRecognizer: AnyObject)
-    {
-        if let gesture = gestureRecognizer as? UITapGestureRecognizer
-        {
-            if let imageView = gesture.view as? UIImageView
-            {
-                let imageProvider = UIImageProvider(image: imageView.image!)
-                let buttonAssets = CloseButtonAssets(normal: UIImage(named:"close_normal")!, highlighted: UIImage(named: "close_highlighted"))
-                let configuration = ImageViewerConfiguration(imageSize: CGSize(width: 10, height: 10), closeButtonAssets: buttonAssets)
-                
-                let imageViewer = ImageViewer(imageProvider: imageProvider, configuration: configuration, displacedView: imageView)
-                self.presentImageViewer(imageViewer)
-            }
-        }
     }
     
     func populateModel()
