@@ -11,6 +11,7 @@ import TwitterKit
 import Alamofire
 import AlamofireImage
 import Argo
+import ImageViewer
 
 class FollowerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -49,6 +50,24 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
             backgroundImageView.image = UIImage.loadImageFromDisk("")
         }
         
+        //Profile image overlay
+        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        profileImageView.addGestureRecognizer(tapGestureRecognizer)
+
+        //Banner image overlay
+        tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        backgroundImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+
+        
+        /*
+         self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+         // Cover Vertical is necessary for CurrentContext
+         self.modalPresentationStyle = .CurrentContext
+         // Display on top of    current UIView
+         self.presentViewController(ModalImageViewController(), animated: true, completion: nil)
+         */
+        
         //Create a border color for the banner
         //backgroundImageView.layer.borderWidth = 3
         //backgroundImageView.layer.borderColor = UIColor.whiteColor().CGColor
@@ -75,6 +94,24 @@ class FollowerViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func imageTapped(gestureRecognizer: AnyObject)
+    {
+        print(gestureRecognizer)
+        
+        if let gesture = gestureRecognizer as? UITapGestureRecognizer
+        {
+            if let imageView = gesture.view as? UIImageView
+            {
+                let imageProvider = UIImageProvider(image: imageView.image!)
+                let buttonAssets = CloseButtonAssets(normal: UIImage(named:"close_normal")!, highlighted: UIImage(named: "close_highlighted"))
+                let configuration = ImageViewerConfiguration(imageSize: CGSize(width: 10, height: 10), closeButtonAssets: buttonAssets)
+                
+                let imageViewer = ImageViewer(imageProvider: imageProvider, configuration: configuration, displacedView: imageView)
+                self.presentImageViewer(imageViewer)
+            }
+        }
     }
     
     func populateModel()
