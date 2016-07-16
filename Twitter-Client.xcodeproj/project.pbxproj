@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10F61331D37C12000FB9476 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F61321D37C12000FB9476 /* TweetTableViewCell.swift */; };
 		A114489D1D3585860019EDD2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114489C1D3585860019EDD2 /* Extensions.swift */; };
 		A114489F1D359DB00019EDD2 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114489E1D359DB00019EDD2 /* FollowerViewController.swift */; };
+		A15A348E1D3A590900F1D587 /* UIImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A348D1D3A590900F1D587 /* UIImageProvider.swift */; };
+		A15A34901D3A81A000F1D587 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A348F1D3A81A000F1D587 /* Helper.swift */; };
 		A193350E1D3123A9004A2A4E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */; };
 		A194F21B1D30FEB20094CEEC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194F21A1D30FEB20094CEEC /* Models.swift */; };
 		A19A6C0F1D2BDB2900165020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A6C0E1D2BDB2900165020 /* AppDelegate.swift */; };
@@ -28,8 +31,11 @@
 
 /* Begin PBXFileReference section */
 		760EA33369DEA67A2A4FE198 /* Pods_Twitter_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10F61321D37C12000FB9476 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		A114489C1D3585860019EDD2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A114489E1D359DB00019EDD2 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		A15A348D1D3A590900F1D587 /* UIImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageProvider.swift; sourceTree = "<group>"; };
+		A15A348F1D3A81A000F1D587 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		A194F21A1D30FEB20094CEEC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A19A6C0B1D2BDB2900165020 /* Twitter-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,10 +120,13 @@
 				A1EEA58E1D2BE5B600B1764D /* MainViewController.swift */,
 				A114489C1D3585860019EDD2 /* Extensions.swift */,
 				A114489E1D359DB00019EDD2 /* FollowerViewController.swift */,
+				A15A348F1D3A81A000F1D587 /* Helper.swift */,
 				A1ACF6861D31A6A30048ECCF /* Reachability.swift */,
+				A15A348D1D3A590900F1D587 /* UIImageProvider.swift */,
 				A1ACF6621D318C610048ECCF /* Model.xcdatamodeld */,
 				A19A6C151D2BDB2900165020 /* Assets.xcassets */,
 				A193350D1D3123A9004A2A4E /* FollowerTableViewCell.swift */,
+				A10F61321D37C12000FB9476 /* TweetTableViewCell.swift */,
 				A19A6C171D2BDB2900165020 /* LaunchScreen.storyboard */,
 				A19A6C1A1D2BDB2900165020 /* Info.plist */,
 			);
@@ -262,14 +271,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1ACF6871D31A6A30048ECCF /* Reachability.swift in Sources */,
+				A15A348E1D3A590900F1D587 /* UIImageProvider.swift in Sources */,
 				A114489F1D359DB00019EDD2 /* FollowerViewController.swift in Sources */,
 				A1EEA58F1D2BE5B600B1764D /* MainViewController.swift in Sources */,
+				A10F61331D37C12000FB9476 /* TweetTableViewCell.swift in Sources */,
 				A19A6C111D2BDB2900165020 /* LoginViewController.swift in Sources */,
 				A114489D1D3585860019EDD2 /* Extensions.swift in Sources */,
 				A19A6C0F1D2BDB2900165020 /* AppDelegate.swift in Sources */,
 				A194F21B1D30FEB20094CEEC /* Models.swift in Sources */,
 				A193350E1D3123A9004A2A4E /* FollowerTableViewCell.swift in Sources */,
 				A1ACF6641D318C610048ECCF /* Model.xcdatamodeld in Sources */,
+				A15A34901D3A81A000F1D587 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
